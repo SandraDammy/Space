@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow({ subsets: ["latin"], weight: ["400"] });
+const barlow_condensed = Barlow_Condensed({ subsets: ["latin"], weight: ["400"] });
+const bellefair = Bellefair({ subsets: ["latin"], weight: ["400"] });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={[barlow.className, barlow_condensed.className, bellefair.className].toString()} >{children}</body>
     </html>
   );
 }
